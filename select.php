@@ -8,49 +8,37 @@ require 'connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dating App</title>
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <style>
-        table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-        }
-
-        td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-        }
-
-        tr:nth-child(even) {
-        background-color: #dddddd;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-
-        
+    <div class="header">
+		<h2>I want to find...</h2>
+	</div>
         <form action="find.php" method="post">
 
-            <div><p>Age</p></div>
-            <div class="input-group mb-3 search">
-                <label>Minimum age</label>               
+         
+            <div class="input-group">
+                <label>Minimum age</label><br>             
                 <input type="text" name="minage" required placeholder="Min age is required">
-                <label>Maximum age</label>               
+            </div>
+            <div class="input-group">
+                <label>Maximum age</label><br>             
                 <input type="text" name="maxage">    
             </div>
 
-            <div><p>Gender</p></div>
-            <div class="input-group mb-3 search">             
+            <div><p></p></div>
+            <div class="input-group">
+                <label>Gender</label><br>             
                 <input type="text" name="gender">   
             </div>
 
-            <div><p>Race</p></div>
-            <div class="input-group mb-3 search">             
+            <div class="input-group">
+                <label>Race</label><br>               
                 <input type="text" name="race">   
             </div>
 
+            <br>
             <button type="submit" class="btn">Submit</button>
         </form>
     

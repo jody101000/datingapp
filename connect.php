@@ -107,12 +107,10 @@ if (isset($_POST['reg_staff'])) {
   $title = mysqli_real_escape_string($db, $_POST['title']);
   $department = mysqli_real_escape_string($db, $_POST['department']);
 	
-  $m_id = mysqli_real_escape_string($db, $_POST['m_id']);
   $div_num = mysqli_real_escape_string($db, $_POST['div_num']);
 	$child_num = mysqli_real_escape_string($db, $_POST['child_num']);
   
-  $p_id = mysqli_real_escape_string($db, $_POST['p_id']);
-	$salary = mysqli_real_escape_string($db, $_POST['salary']);
+  $salary = mysqli_real_escape_string($db, $_POST['salary']);
 	$car_num = mysqli_real_escape_string($db, $_POST['car_num']);
 	$house_num = mysqli_real_escape_string($db, $_POST['house_num']);
   
