@@ -38,7 +38,7 @@ require 'connect.php';
     <table>
         <td><b>Case ID</b></td>
             <td><b>Name</b></td>
-            <td><b>Address</b></td>
+            <td><b>Email</b></td>
             <td><b>Age</b></td>
             <td><b>Gender</b></td>
             <td><b>Sexual Orientation</b></td>
@@ -49,7 +49,7 @@ require 'connect.php';
             <tr>
                 <td><?php echo $user["case_id"]?></td>
                 <td><?php echo $user["name"] ?></td>
-                <td><?php echo $user["address"] ?></td>
+                <td><?php echo $user["email"] ?></td>
                 <td><?php echo $user["age"]?></td>
                 <td><?php echo $user["gender"] ?></td>
                 <td><?php echo $user["sexual_orientation"] ?></td>
