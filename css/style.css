@@ -76,3 +76,7 @@ th {
 tr:nth-child(even) {
   background-color: #c0d0dc;
 }
+
+error {
+  color: red;
+}

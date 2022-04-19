@@ -17,13 +17,18 @@ require 'connect.php';
 <center><div>
     <p1> Register as: </p1>
     &nbsp
-    <button>
-        <a href="./stu_register.php">Student</a>
-    </button>
+    <a href="./stu_register.php"><button>
+        Student
+    </button></a>
     &nbsp
-    <button>
-    <a href="./stf_register.php">Staff/Faculty</a>
-    </button>
+    <a href="./stf_register.php"><button>
+    Staff/Faculty
+    </button></a>
+    <br><br>
+    <p1> Search without registration: </p1>
+    <a href="./select.php"><button>
+    Search
+    </button></a>
 </div></center>
     
 </body>

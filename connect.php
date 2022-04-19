@@ -61,13 +61,10 @@ if (isset($_POST['reg_student'])) {
 	// Checking user in database
 	if ($user) {
 		if ($user['case_id'] === $case_id) {
-			// array_push($errors, "User already exists");
-      echo ("User already exists");
+			array_push($errors, "User already exists");
+      echo ('<b style="color:red;">Oops! User already exists</b>');
 		}
 	}
-
-	echo "Total error: " . count($errors);
-
   
 
 	// Insert New Data
@@ -77,16 +74,20 @@ if (isset($_POST['reg_student'])) {
     $smoke = (int)$smoke;
     $alcohol = (int)$alcohol;
     $exercise_frequency = (int)$exercise_frequency;
-		$query = "INSERT INTO User (case_id,name, address,phone_number,email,age,gender, sexual_orientation,height,race,country) VALUES ('$case_id', '$name', '$address','$phone_num','$email',$age,'$gender','$sexual_ori','$height','$race','$country')";
+		$query = "INSERT INTO User (case_id,name, address,phone_number,email,age,gender, sexual_orientation,height,race,country) 
+              VALUES ('$case_id', '$name', '$address','$phone_num','$email',$age,'$gender','$sexual_ori','$height','$race','$country')";
 		mysqli_query($db, $query);
     $grad_yr = (int)$grad_yr;
     $query = "INSERT INTO Student (graduate_yr, major, case_id) VALUES ($grad_yr, '$major', '$case_id')";
 		mysqli_query($db, $query);
-    $query = "INSERT INTO Preference (case_id, smoke, alcohol, music_preference, exercise_frequency, has_pets, major, race, height, age, country) VALUES ('$case_id', $smoke, $alcohol, '$music_preference', $exercise_frequency, '$has_pets', '$pre_major', '$pre_race', '$pre_height', $pre_age, '$pre_country')";
+    $query = "INSERT INTO Preference (case_id, smoke, alcohol, music_preference, exercise_frequency, 
+                                      has_pets, major, race, height, age, country) 
+              VALUES ('$case_id', $smoke, $alcohol, '$music_preference', $exercise_frequency, 
+                      '$has_pets', '$pre_major', '$pre_race', '$pre_height', $pre_age, '$pre_country')";
     mysqli_query($db, $query);
 		$_SESSION['name'] = $name;
 		$_SESSION['success']  = "You're now added to our database";
-		header('location: index.php');
+		header('location: select.php');
 	}
 
 }
@@ -160,15 +161,21 @@ if (isset($_POST['reg_staff'])) {
 		mysqli_query($db, $query);
   	$query = "INSERT INTO Staff_Faculty (title, department, case_id) VALUES ('$title', '$department', '$case_id')";
 		mysqli_query($db, $query);
-    $query = "INSERT INTO Marital_history (divorce_number, children_number, case_id) VALUES ('$div_num', '$child_num', '$case_id')";
-		mysqli_query($db, $query);
-    $query = "INSERT INTO Property (salary, car_number, house_number,case_id) VALUES ('$salary', '$car_num', '$house_num', '$case_id')";
-		mysqli_query($db, $query);
+    
+    if($div_num != null && $child_num != null){
+      $query = "INSERT INTO Marital_history (divorce_number, children_number, case_id) VALUES ('$div_num', '$child_num', '$case_id')";
+      mysqli_query($db, $query);
+    }
+    
+    if($salary != null && $car_num != null && $house_num != null){
+      $query = "INSERT INTO Property (salary, car_number, house_number,case_id) VALUES ('$salary', '$car_num', '$house_num', '$case_id')";
+      mysqli_query($db, $query);
+    }
     $query = "INSERT INTO Preference (case_id, smoke, alcohol, music_preference, exercise_frequency, has_pets, major, race, height, age, country) VALUES ('$case_id' ,$smoke, $alcohol, '$music_preference', $exercise_frequency, '$has_pets', '$pre_major', '$pre_race', '$pre_height', $pre_age, '$pre_country')";
     mysqli_query($db, $query);
 		// $_SESSION['name'] = $name;
 		// $_SESSION['success']  = "You're now added to our database";
-		header('location: index.php');
+		header('location: select.php');
 	}
 
 }

@@ -144,7 +144,9 @@
 
 		<br>
 		<button type="submit" class="btn" name="reg_student">
-			<a href="select.php">Register</a>
+			
+				Register
+			
 		</button>
 		</div>
 		

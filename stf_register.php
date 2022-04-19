@@ -172,7 +172,7 @@
 
 		<br>
 		<button type="submit" class="btn" name="reg_staff">
-			<a href="select.php">Register</a>
+			Register
 		</button>
 		</div>
 	</div>

@@ -8,10 +8,8 @@ require 'connect.php';
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-    <body>
-
-   
-        <?php
+<body>
+    <?php
         $minage = $_POST['minage'];
         $maxage = $_POST['maxage'];
         $gender = $_POST['gender'];
@@ -19,10 +17,10 @@ require 'connect.php';
 
         $and = false;
         // echo $age;
-        $sql = "SELECT * FROM `User` WHERE";
+        $sql = "SELECT * FROM `User` WHERE `name`<>'' and";
         if ($minage != ''){
-           $sql.= " `age`>='$minage' ";
-           $and = true;
+        $sql.= " `age`>='$minage' ";
+        $and = true;
         }
         if ($maxage != ''){
             $sql.= "and `age`<'$maxage' ";
@@ -35,20 +33,19 @@ require 'connect.php';
         }
         
         $users = $conn->query($sql);
-        
-        ?>
+    ?>
 
-<table>
-            <td><b>Case ID</b></td>
-                    <td><b>Name</b></td>
-                    <td><b>Address</b></td>
-                    <td><b>Age</b></td>
-                    <td><b>Gender</b></td>
-                    <td><b>Sexual Orientation</b></td>
-                    <td><b>Height</b></td>
-                    <td><b>Race</b></td>
-                    <td><b>Country</b></td>
-            <?php while($user = $users->fetch(PDO::FETCH_ASSOC)) { ?>
+    <table>
+        <td><b>Case ID</b></td>
+            <td><b>Name</b></td>
+            <td><b>Address</b></td>
+            <td><b>Age</b></td>
+            <td><b>Gender</b></td>
+            <td><b>Sexual Orientation</b></td>
+            <td><b>Height</b></td>
+            <td><b>Race</b></td>
+            <td><b>Country</b></td>
+        <?php while($user = $users->fetch(PDO::FETCH_ASSOC)) { ?>
             <tr>
                 <td><?php echo $user["case_id"]?></td>
                 <td><?php echo $user["name"] ?></td>
@@ -63,5 +60,5 @@ require 'connect.php';
         <?php }?>
     </table>
 
-    </body>
+</body>
 </html>
