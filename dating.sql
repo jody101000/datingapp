@@ -74,7 +74,7 @@ INSERT INTO `user`(`case_id`, `name`,`address`,`phone_number`, `email`, `age`, `
 ('yxt1234', 'Yiheng Tao', '10001 Chester Ave','2161234567','yxt1234@case.edu','21','male','heterosexual','5ft10','asian','China'),
 ('mkz18', 'Maria Zhu', '10001 Chester Ave','7038322830','mkz18@case.edu','20','female','heterosexual','5ft8','asian','USA'),
 ('qwe123', 'Abbey Carroll', '10900 Euclid Ave','1234567890','qwe123@case.edu','44','female','heterosexual','5ft9','white','USA'),
-('asd123', 'Allen James', '10900 Euclid Ave','2347684270','asd123@case.edu','50','male','heterosexual','6ft1','black','USA'),
+('asd123', 'Allen James', '10900 Euclid Ave','2347684270','asd123@case.edu','50','male','heterosexual','6ft1','african','USA'),
 ('nds123', 'Bella Bracken', '10900 Euclid Ave','3471292379','nds123@case.edu','33','female','heterosexual','5ft5','white','USA');
 
 INSERT INTO `Marital_history`(`m_id`, `divorce_number`, `children_number`,`case_id`) VALUES

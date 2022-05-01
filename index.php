@@ -8,32 +8,28 @@ require 'connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dating App</title>
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <style>
-        table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-        }
-
-        td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-        }
-
-        tr:nth-child(even) {
-        background-color: #dddddd;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
+    
 </head>
 
 <body>
 
-<div>
-    <button><a href="./stu_register.php">Student</a></button>
-    <button><a href="./stf_register.php">Staff/Faculty</a></button>
-</div>
+<center><div>
+    <p1> Register as: </p1>
+    &nbsp
+    <a href="./stu_register.php"><button>
+        Student
+    </button></a>
+    &nbsp
+    <a href="./stf_register.php"><button>
+    Staff/Faculty
+    </button></a>
+    <br><br>
+    <p1> Search without registration: </p1>
+    <a href="./select.php"><button>
+    Search
+    </button></a>
+</div></center>
     
 </body>
 </html>
